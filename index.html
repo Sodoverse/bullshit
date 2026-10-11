@@ -1,45 +1,257 @@
-<style>
-  body {
-    background-color: lavenderblush;
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 30px;
-}
+```html
+<!DOCTYPE html>
+<html lang="en">
 
-.container {
-    background-color: white;
-    max-width: 700px;
-    margin: 20px auto;
-    padding: 25px;
-    border-radius: 15px;
-}
-  h1 { color: hotpink; }
-  h2 { color: mediumvioletred; }
-  p { color: #554455; }
-  a {
-    display: block;
-    margin-bottom: 30px;
-  }
-</style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<h1>Super Sonic Warrior!</h1>
+    <title>A Little Website for You ♡</title>
 
-<div class="container">
+    <style>
+        /* GENERAL PAGE STYLE */
+        body {
+            background: linear-gradient(
+                135deg,
+                #fff0f7,
+                #f0e6ff,
+                #fff7fc
+            );
+            font-family: "Times New Roman", serif;
+            color: #55445f;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+        }
 
-    <h1>SODO DID THIS SHIT!</h1>
+        /* NAVIGATION BAR */
+        .navbar {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.75);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
 
-    <h2>About Me</h2>
-    <p>I'm learning HTML!</p>
+        .navbar a {
+            display: inline-block;
+            padding: 10px 16px;
+            background-color: #f8c8e0;
+            color: #75456b;
+            text-decoration: none;
+            border-radius: 20px;
+            transition: background-color 0.3s,
+                        transform 0.3s;
+        }
 
-    <h2>Things I Like!</h2>
-    <ul>
-        <li>Uh...</li>
-        <li>Maybe...</li>
-        <li>Some...</li>
-        <li>Butt...</li>
-    </ul>
+        .navbar a:hover {
+            background-color: #e8c8ff;
+            transform: translateY(-3px);
+        }
 
-</div>
+        /* WELCOME SECTION */
+        .hero {
+            text-align: center;
+            padding: 75px 20px 60px;
+        }
 
-<a href="https://www.pornhub.com">Click me!!!</a>
-<a href="https://www.xvideos.com">For the people that did click the link, after I said don't click it. This is your only warning. Don't click it.</a>
+        .hero h1 {
+            color: #d85d9c;
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 19px;
+            line-height: 1.8;
+        }
+
+        .heart {
+            display: inline-block;
+            color: #e879b0;
+            animation: heartbeat 1.8s infinite;
+        }
+
+        /* CONTENT CARDS */
+        .container {
+            max-width: 750px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .card {
+            background-color: rgba(255, 255, 255, 0.85);
+            padding: 28px;
+            margin-bottom: 25px;
+            border: 2px solid #f6d8ed;
+            border-radius: 22px;
+            box-shadow: 0 8px 22px rgba(164, 112, 174, 0.12);
+            animation: fadeIn 1s ease both;
+        }
+
+        h2 {
+            color: #a66bc5;
+            text-align: center;
+        }
+
+        p {
+            line-height: 1.8;
+        }
+
+        /* MEMORY LIST */
+        .memory-list {
+            padding-left: 25px;
+            line-height: 2;
+        }
+
+        .memory-list li::marker {
+            color: #d85d9c;
+        }
+
+        /* DECORATIVE DIVIDER */
+        .divider {
+            text-align: center;
+            color: #d58cc2;
+            letter-spacing: 8px;
+            margin: 25px 0;
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 30px 15px;
+            color: #896c91;
+        }
+
+        /* ANIMATIONS */
+        @keyframes heartbeat {
+            0%, 100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.2);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(12px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* PHONE-FRIENDLY LAYOUT */
+        @media (max-width: 600px) {
+            .hero {
+                padding-top: 45px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .navbar {
+                gap: 8px;
+            }
+
+            .navbar a {
+                padding: 9px 12px;
+            }
+
+            .card {
+                padding: 20px;
+            }
+        }
+
+        /* RESPECT REDUCED-MOTION PREFERENCES */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation: none !important;
+                transition: none !important;
+                scroll-behavior: auto !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <nav class="navbar">
+        <a href="#home">Home ♡</a>
+        <a href="#message">A Little Message</a>
+    </nav>
+
+    <!-- WELCOME SECTION -->
+    <header class="hero" id="home">
+        <h1>HI SKYE!!!<span class="heart">♡</span></h1>
+
+        <p>
+            My gift to you,<br>
+            made with a whole lot of love(and pain).
+        </p>
+
+        <div class="divider">✧ ♡ ✧</div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="container">
+
+        <!-- PERSONAL MESSAGE -->
+        <section class="card" id="message">
+            <h2>A Little Message for You 💌</h2>
+
+            <p>
+                Hey, Skye! I made this little website just for you, and to test out my skills with HTML.
+                I wanted to create something special that you could
+                visit whenever you wanted a little reminder that
+                you're appreciated.
+            </p>
+
+            <p>
+                You're someone I'm really glad to have in my life(THIS IS TRUE),
+                and I hope this project of mines makes
+                you smile. You deserve plenty of good days, happy
+                moments, and reasons to laugh.
+            </p>
+
+            <p>
+                — Made by THE GOAT, just for SKYE! ♡
+            </p>
+        
+        </section>
+
+        <!-- ENDING MESSAGE -->
+        <section class="card">
+            <h2>ONE LAST THING! 🌷</h2>
+
+            <p style="text-align: center;">
+                DON'T YOU EVER PLAY ROBLOX WITHOUT ME AGAIN!!!!
+            </p>
+
+            <p style="text-align: center; font-size: 24px;">
+                ♡ ✧ ♡ ✧ ♡
+            </p>
+        </section>
+
+    </main>
+
+    <footer>
+        Made with love(ALOT), and a BUNCH of HTML and CSS ♡
+    </footer>
+
+</body>
+</html>
+```
